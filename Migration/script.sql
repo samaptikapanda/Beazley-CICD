@@ -10,3 +10,11 @@ create or replace TRANSIENT TABLE "DBO".S_EMPLOYEEDETAILS_TRANSIENT (
 	SALARY FLOAT
 );
 -----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+create or replace TRANSIENT TABLE "DBO".T_PRODUCTS (
+	PRODUCT_ID NUMBER(38,0) NOT NULL,
+	PRODUCT_NAME VARCHAR(50),
+	primary key (PRODUCT_ID)
+);
+-----------------------------------------------------------------------------
