@@ -20,6 +20,13 @@ create or replace TABLE "DBO"."Users" (
 -----------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------
+create or replace TABLE "DBO"."UsersV2" (
+	ID NUMBER(38,0) autoincrement start 1 increment 1 noorder,
+	NAME VARCHAR(100) NOT NULL
+);
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
 create or replace TRANSIENT TABLE "DBO".S_EMPLOYEEDETAILS_TRANSIENT (
 	EMP_ID NUMBER(38,0) autoincrement start 1 increment 1 noorder,
 	EMP_NAME VARCHAR(255),
