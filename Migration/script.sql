@@ -4,7 +4,6 @@ create or replace TABLE "DBO".FLIGHT (
 	DEPARTUREDATE DATE,
 	DEPARTURECITY VARCHAR(50),
 	DESTINATIONCITY VARCHAR(50),
-	SEATNO NUMBER(38,0),
 	constraint PK primary key (FLIGHTID)
 );
 -----------------------------------------------------------------------------
@@ -50,8 +49,7 @@ create or replace TRANSIENT TABLE "TRANSIENT"."R_Demo_TEST" (
 	"Gender" VARCHAR(50),
 	SALARY NUMBER(18,0),
 	DOB DATE NOT NULL,
-	ADDRESS VARCHAR(50),
-	"Col1" VARCHAR(30) NOT NULL
+	ADDRESS VARCHAR(50)
 );
 -----------------------------------------------------------------------------
 
