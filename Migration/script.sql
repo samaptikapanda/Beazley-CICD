@@ -1,3 +1,13 @@
+create or replace TABLE "DBO"."DQ_details" (
+	DETAIL_ID NUMBER(38,0) autoincrement start 1 increment 1 noorder,
+	ORDER_ID NUMBER(38,0),
+	PRODUCT_ID NUMBER(38,0),
+	QUANTITY NUMBER(38,0),
+	PRICE NUMBER(10,2)
+);
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
 create or replace TABLE "DBO".FLIGHT (
 	FLIGHTID NUMBER(38,0),
 	FLIGHTNUMBER VARCHAR(10),
@@ -45,7 +55,6 @@ create or replace TRANSIENT TABLE "TRANSIENT".DEMO (
 create or replace TRANSIENT TABLE "TRANSIENT"."R_Demo_TEST" (
 	"Name" VARCHAR(50) NOT NULL,
 	"Emp_ID" NUMBER(20,0) NOT NULL autoincrement start 2 increment 2 noorder,
-	"Gender" VARCHAR(50),
 	SALARY NUMBER(18,0),
 	DOB DATE NOT NULL,
 	ADDRESS VARCHAR(50)
