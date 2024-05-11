@@ -1,1 +1,0 @@
-create or replace sequence "DBO".SEQ1 start with 2 increment by 2 noorder;
