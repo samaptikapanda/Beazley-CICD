@@ -33559,7 +33559,7 @@ async function run() {
       SourceSystemName: "SGSSANDBOX",
       TargetSystemName: "SANDBOX1",
       SystemType: "SNOWFLAKE",
-      SchemaName: ["DEV","CDR","DBO","STG"],
+      SchemaName: ["DEV","CDR","DBO","STG","TRANSIENT"],
       HeadBranch: "",
       BaseBranch: "master",
       Path: "Migration",
