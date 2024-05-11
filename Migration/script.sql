@@ -62,6 +62,24 @@ create or replace TRANSIENT TABLE "TRANSIENT"."R_Demo_TEST" (
 -----------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------
+create or replace TRANSIENT TABLE "TRANSIENT".SMALLDATATEST (
+	ID NUMBER(38,0),
+	EMPLOYEEID NUMBER(38,0),
+	NAME VARCHAR(50),
+	EMAIL VARCHAR(50),
+	"DimLocation" VARCHAR(15),
+	"CountryCode" VARCHAR(50),
+	STARTDATE VARCHAR(15),
+	ENDDATE DATE,
+	ZIPCODE VARCHAR(50),
+	SALARY NUMBER(18,0),
+	"RiskExpLocation" VARCHAR(50),
+	TESTBLANK VARCHAR(10),
+	COLUMN_A VARCHAR(1000)
+);
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
 create or replace TRANSIENT TABLE "TRANSIENT".TRANSIENT_1 (
 	NAME VARCHAR(50) NOT NULL,
 	"Emp_ID" NUMBER(38,0) NOT NULL,
