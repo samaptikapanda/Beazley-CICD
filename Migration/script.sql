@@ -10,6 +10,15 @@ create or replace TABLE "DBO".FLIGHT (
 -----------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------
+create or replace TABLE "DBO"."Users" (
+	ID NUMBER(38,0) autoincrement start 1 increment 1 noorder,
+	NAME VARCHAR(100) NOT NULL,
+	PREFERENCES VARIANT,
+	CREATED_AT TIMESTAMP_NTZ(9)
+);
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
 create or replace TRANSIENT TABLE "DBO".S_EMPLOYEEDETAILS_TRANSIENT (
 	EMP_ID NUMBER(38,0) autoincrement start 1 increment 1 noorder,
 	EMP_NAME VARCHAR(255),
@@ -38,7 +47,8 @@ create or replace TRANSIENT TABLE "TRANSIENT".DEMO (
 	"Gender" VARCHAR(50),
 	SALARY NUMBER(18,0),
 	DOB DATE NOT NULL,
-	ADDRESS VARCHAR(50)
+	ADDRESS VARCHAR(50),
+	COL1 VARCHAR(50)
 );
 -----------------------------------------------------------------------------
 
@@ -49,7 +59,8 @@ create or replace TRANSIENT TABLE "TRANSIENT"."R_Demo_TEST" (
 	"Gender" VARCHAR(50),
 	SALARY NUMBER(18,0),
 	DOB DATE NOT NULL,
-	ADDRESS VARCHAR(50)
+	ADDRESS VARCHAR(50),
+	"Col1" VARCHAR(30) NOT NULL
 );
 -----------------------------------------------------------------------------
 
