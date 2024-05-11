@@ -57,7 +57,8 @@ create or replace TRANSIENT TABLE "TRANSIENT"."R_Demo_TEST" (
 	"Emp_ID" NUMBER(20,0) NOT NULL autoincrement start 2 increment 2 noorder,
 	SALARY NUMBER(18,0),
 	DOB DATE NOT NULL,
-	ADDRESS VARCHAR(50)
+	"Col2" NUMBER(38,0) NOT NULL autoincrement start 1 increment 1 noorder,
+	"Col3" DATE NOT NULL
 );
 -----------------------------------------------------------------------------
 
@@ -71,11 +72,7 @@ create or replace TRANSIENT TABLE "TRANSIENT".SMALLDATATEST (
 	"CountryCode" VARCHAR(50),
 	STARTDATE VARCHAR(15),
 	ENDDATE DATE,
-	ZIPCODE VARCHAR(50),
-	SALARY NUMBER(18,0),
-	"RiskExpLocation" VARCHAR(50),
-	TESTBLANK VARCHAR(10),
-	COLUMN_A VARCHAR(1000)
+	ADDRESS VARCHAR(50)
 );
 -----------------------------------------------------------------------------
 
@@ -85,4 +82,14 @@ create or replace TRANSIENT TABLE "TRANSIENT".TRANSIENT_1 (
 	"Emp_ID" NUMBER(38,0) NOT NULL,
 	primary key ("Emp_ID")
 );
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE "TRANSIENT"."Proc_return_float_example"("INPUT_NUMBER" FLOAT)
+RETURNS FLOAT
+LANGUAGE JAVASCRIPT
+EXECUTE AS CALLER
+AS '
+  return 42.0;
+  ';
 -----------------------------------------------------------------------------
