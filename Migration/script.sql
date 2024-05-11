@@ -37,8 +37,7 @@ create or replace TRANSIENT TABLE "TRANSIENT".DEMO (
 	"Gender" VARCHAR(50),
 	SALARY NUMBER(18,0),
 	DOB DATE NOT NULL,
-	ADDRESS VARCHAR(50),
-	COL1 VARCHAR(50)
+	ADDRESS VARCHAR(50)
 );
 -----------------------------------------------------------------------------
 
@@ -49,10 +48,7 @@ create or replace TRANSIENT TABLE "TRANSIENT"."R_Demo_TEST" (
 	"Gender" VARCHAR(50),
 	SALARY NUMBER(18,0),
 	DOB DATE NOT NULL,
-	ADDRESS VARCHAR(50),
-	"Col1" VARCHAR(30) NOT NULL,
-	"Col2" NUMBER(38,0) NOT NULL autoincrement start 1 increment 1 noorder,
-	"Col3" DATE NOT NULL
+	ADDRESS VARCHAR(50)
 );
 -----------------------------------------------------------------------------
 
