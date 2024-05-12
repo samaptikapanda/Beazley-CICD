@@ -9,6 +9,5 @@ create or replace TRANSIENT TABLE "TRANSIENT"."Test_Table" (
 	PHONE VARCHAR(20),
 	JOINING_DATE DATE,
 	SALARY FLOAT,
-	primary key (EMP_ID),
-	foreign key (ID) references TRANSIENT."Test_Table"(EMP_ID)
+	primary key (EMP_ID)
 );
