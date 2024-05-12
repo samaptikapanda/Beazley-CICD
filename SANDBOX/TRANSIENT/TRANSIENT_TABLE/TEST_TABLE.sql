@@ -9,4 +9,3 @@ create or replace TRANSIENT TABLE "TRANSIENT".TEST_TABLE (
 	NAME1 VARCHAR(50),
 	NAME2 VARCHAR(50)
 );
------------------------------------------------------------------------------
