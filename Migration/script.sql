@@ -1,9 +1,12 @@
-ALTER TABLE "SANDBOX1"."DBO".CUSTOMERSV1 ALTER "NAME" SET DATA TYPE VARCHAR(500);
------------------------------------------------------------------------------
-
------------------------------------------------------------------------------
-create or replace TABLE "DBO".CUSTOMERSV2 (
-	ID NUMBER(38,0) NOT NULL autoincrement start 1 increment 1 noorder,
-	NAME VARCHAR(100) NOT NULL
+create or replace TRANSIENT TABLE "TRANSIENT".TEST_TABLE (
+	ID NUMBER(38,0),
+	NAME VARCHAR(50),
+	AGE NUMBER(38,0),
+	CITY VARCHAR(50),
+	EMAIL VARCHAR(100),
+	PHONE_NUMBER VARCHAR(20),
+	OCCUPATION VARCHAR(50),
+	NAME1 VARCHAR(50),
+	NAME2 VARCHAR(50)
 );
 -----------------------------------------------------------------------------
