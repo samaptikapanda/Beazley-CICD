@@ -10,6 +10,5 @@ create or replace TRANSIENT TABLE "TRANSIENT"."Test_Table" (
 	JOINING_DATE DATE,
 	SALARY FLOAT,
 	primary key (EMP_ID),
-	foreign key (ID) references "TRANSIENT"."Test_Table"("EMP_ID")
+	foreign key (ID) references TRANSIENT."Test_Table"(EMP_ID)
 );
------------------------------------------------------------------------------
