@@ -9,4 +9,3 @@ create or replace TABLE "DBO"."Employee_Test" (
 	JOINING_DATE DATE,
 	SALARY FLOAT
 );
------------------------------------------------------------------------------
