@@ -1,5 +1,3 @@
-ALTER TABLE ""."DBO".DEPLOYMENT_TEST ADD DATE_MODIFIED VARCHAR(16777216)
+ALTER TABLE "SANDBOX1"."DBO".DEPLOYMENT_TEST ADD DATE_MODIFIED VARCHAR(16777216)
 ;
------------------------------------------------------------------------------
-
 -----------------------------------------------------------------------------
