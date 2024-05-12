@@ -1,0 +1,9 @@
+create or replace TRANSIENT TABLE "TRANSIENT".CUSTOMER_V2 (
+	"Name" VARCHAR(50) NOT NULL,
+	"Emp_ID" NUMBER(20,0) NOT NULL autoincrement start 1 increment 1 noorder,
+	GENDER VARCHAR(50),
+	SALARY NUMBER(18,0),
+	DOB DATE NOT NULL,
+	ADDRESS VARCHAR(50),
+	COL1 VARCHAR(50)
+);
