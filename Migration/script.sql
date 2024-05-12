@@ -1,6 +1,4 @@
-ALTER TABLE ""."DBO".DEPLOYMENT_TEST ADD NEW_COLUMN VARCHAR(16777216);
------------------------------------------------------------------------------
-ALTER TABLE ""."DBO".DEPLOYMENT_TEST ADD DATE_DELETED VARCHAR(16777216)
+ALTER TABLE ""."TRANSIENT"."Employee_Summary" ADD DOB DATE
 ;
 -----------------------------------------------------------------------------
 
