@@ -1,4 +1,4 @@
-create or replace TRANSIENT TABLE "TRANSIENT"."Employee_Summary" (
+create or replace TRANSIENT TABLE "TRANSIENT"."Employee_ABC" (
 	EMP_ID NUMBER(38,0),
 	EMP_NAME VARCHAR(50),
 	AGE NUMBER(38,0),
