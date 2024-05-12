@@ -1,5 +1,3 @@
-ALTER TABLE ""."TRANSIENT"."Employee_Summary" ADD DOB DATE
+ALTER TABLE "SANDBOX1"."TRANSIENT"."Employee_Summary" ADD DOB DATE
 ;
------------------------------------------------------------------------------
-
 -----------------------------------------------------------------------------
