@@ -25,6 +25,24 @@ create or replace TABLE "DBO"."UsersV3" (
 -----------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------
+create or replace TABLE "DBO"."job" (
+	SEQID NUMBER(38,0),
+	JOBVERSIONID NUMBER(38,0),
+	FORMATTEDJOBNUMBER VARCHAR(16777216),
+	JOBDESCRIPTION VARCHAR(16777216),
+	BRAND VARCHAR(16777216),
+	VARIETY VARCHAR(16777216),
+	JOBBOOKEDDATETIME DATE,
+	JOBSTATUS VARCHAR(16777216),
+	JOBINVOICEDATE DATE,
+	ISJOBRIGHTFIRSTTIME VARCHAR(16777216),
+	PROJECTMANAGERLOGINID NUMBER(38,0),
+	ISMULTIPLANTJOB NUMBER(38,0),
+	PACKAGETYPE VARCHAR(16777216)
+);
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
 create or replace TRANSIENT TABLE "DBO".S_EMPLOYEEDETAILS_TRANSIENT (
 	EMP_ID NUMBER(38,0) autoincrement start 1 increment 1 noorder,
 	EMP_NAME VARCHAR(255),
