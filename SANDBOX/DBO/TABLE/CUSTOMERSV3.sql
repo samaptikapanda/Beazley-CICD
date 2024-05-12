@@ -6,4 +6,3 @@ create or replace TABLE "DBO".CUSTOMERSV3 (
 	ADDR3 DATE,
 	ADDR4 VARCHAR(16777216)
 );
------------------------------------------------------------------------------
