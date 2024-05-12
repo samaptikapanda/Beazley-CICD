@@ -1,7 +1,5 @@
-ALTER TABLE "DBO"."UsersV3" ADD "Age" NUMBER(38,0);
------------------------------------------------------------------------------
-ALTER TABLE "DBO"."UsersV3" ADD "Age2" NUMBER(38,0)
-;
------------------------------------------------------------------------------
-
+create or replace TABLE "DBO".CUSTOMERSV1 (
+	ID NUMBER(38,0) NOT NULL autoincrement start 1 increment 1 noorder,
+	NAME VARCHAR(100) NOT NULL
+);
 -----------------------------------------------------------------------------
