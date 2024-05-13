@@ -25,8 +25,6 @@ async function run() {
   console.log("Sync Complete...");
   console.log("-----------------------------------------------------------------");
 
-  timer.clear();
-
   let body_0 = {
     username: USER_NAME,
     password: P_W,
