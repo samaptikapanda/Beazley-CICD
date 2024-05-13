@@ -33230,29 +33230,6 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 2196:
-/***/ ((module) => {
-
-class TimerService {
-  constructor() {
-    this.timer = null;
-  }
-
-  // Function to pause the process for a given number of milliseconds
-  pause(milliseconds) {
-    return new Promise((resolve) => setTimeout(resolve, milliseconds));
-  }
-
-  // Function to cancel the current timer
-  clear() {
-    clearTimeout(this.timer);
-  }
-}
-module.exports = TimerService;
-
-
-/***/ }),
-
 /***/ 5639:
 /***/ ((module) => {
 
@@ -33545,7 +33522,6 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(2186);
 const github = __nccwpck_require__(5438);
 const fetch = __nccwpck_require__(467);
-const TimerService = __nccwpck_require__(2196);
 
 async function run() {
   let USER_NAME = core.getInput("USER_NAME");
@@ -33560,12 +33536,15 @@ async function run() {
   let base_ref = core.getInput("BASE_REF");
 
   console.log({ head_ref, base_ref, SourceSystem, TargetSystem, schemaName });
-  const timer = new TimerService();
+  let sleep = function (ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  };
 
   console.log("Waiting to Sync Changes...");
-  await timer.pause(20000).then(() => {
-    console.log("sync complete!");
-  });
+  console.log("-----------------------------------------------------------------");
+  await sleep(30000);
+  console.log("Sync Complete...");
+  console.log("-----------------------------------------------------------------");
 
   timer.clear();
 
@@ -33643,6 +33622,10 @@ async function run() {
     issue_number: pull_request.number,
     body: `Thank you for submitting a pull request! We will try to review this as soon as we can.`,
   });
+
+  console.log("-----------------------------------------------------------------");
+  console.log("Action Completed");
+  console.log("-----------------------------------------------------------------");
 }
 
 run();
