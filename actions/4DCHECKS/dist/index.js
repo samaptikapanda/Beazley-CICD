@@ -33541,10 +33541,14 @@ async function run() {
   };
 
   console.log("Waiting to Sync Changes...");
-  console.log("-----------------------------------------------------------------");
-  await sleep(60000);
+  console.log(
+    "-----------------------------------------------------------------"
+  );
+  await sleep(20000);
   console.log("Sync Completed!");
-  console.log("-----------------------------------------------------------------");
+  console.log(
+    "-----------------------------------------------------------------"
+  );
 
   let body_0 = {
     username: USER_NAME,
@@ -33559,7 +33563,7 @@ async function run() {
     SourceSystemName: "SGSSANDBOX",
     TargetSystemName: "SANDBOX1",
     SystemType: "SNOWFLAKE",
-    SchemaName: ["DEV", "CDR", "DBO", "STG", "TRANSIENT"],
+    SchemaName: ["DBO"],
     Path: "DATABASE",
     HeadBranch: "develop",
     BaseBranch: "master",
@@ -33567,7 +33571,9 @@ async function run() {
   };
 
   console.log("Comparing...");
-  console.log("-----------------------------------------------------------------");
+  console.log(
+    "-----------------------------------------------------------------"
+  );
 
   const TokenFetchResponse = await fetch(
     `https://app.4dalert.com/api/v1/user-auth/login-user`,
@@ -33626,9 +33632,13 @@ async function run() {
     body: `Thank you for submitting a pull request! We will try to review this as soon as we can.`,
   });
 
-  console.log("-----------------------------------------------------------------");
+  console.log(
+    "-----------------------------------------------------------------"
+  );
   console.log("Action Completed");
-  console.log("-----------------------------------------------------------------");
+  console.log(
+    "-----------------------------------------------------------------"
+  );
 }
 
 run();
