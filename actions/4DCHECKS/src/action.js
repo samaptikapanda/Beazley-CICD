@@ -23,7 +23,7 @@ async function run() {
   console.log(
     "-----------------------------------------------------------------"
   );
-  await sleep(20000);
+  await sleep(10000);
   console.log("Sync Completed!");
   console.log(
     "-----------------------------------------------------------------"
