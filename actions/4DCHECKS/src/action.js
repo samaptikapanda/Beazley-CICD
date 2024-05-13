@@ -33,7 +33,7 @@ async function run() {
     Path: "DATABASE",
     HeadBranch: "develop",
     BaseBranch: "master",
-    ScriptGenerationRules : [""]
+    ScriptGenerationRules : ["Include DROP statement"]
   };
   const TokenFetchResponse = await fetch(
     `https://app.4dalert.com/api/v1/user-auth/login-user`,
