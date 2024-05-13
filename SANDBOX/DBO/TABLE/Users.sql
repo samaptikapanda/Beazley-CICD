@@ -1,4 +1,0 @@
-create or replace TABLE "DBO"."Users" (
-	PREFERENCES VARIANT,
-	CREATED_AT TIMESTAMP_NTZ(9)
-);
