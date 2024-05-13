@@ -21,8 +21,8 @@ async function run() {
 
   console.log("Waiting to Sync Changes...");
   console.log("-----------------------------------------------------------------");
-  await sleep(30000);
-  console.log("Sync Complete...");
+  await sleep(60000);
+  console.log("Sync Completed!");
   console.log("-----------------------------------------------------------------");
 
   let body_0 = {
@@ -44,6 +44,10 @@ async function run() {
     BaseBranch: "master",
     ScriptGenerationRules: ["Include DROP statement"],
   };
+
+  console.log("Comparing...");
+  console.log("-----------------------------------------------------------------");
+
   const TokenFetchResponse = await fetch(
     `https://app.4dalert.com/api/v1/user-auth/login-user`,
     {
@@ -65,6 +69,7 @@ async function run() {
   //   }
   // );
 
+  console.log("Please Wait...");
   const deployScriptResp = await fetch(
     `https://app.4dalert.com/api/v1/4d/ci/cd/generate-deployment-scripts`,
     {
