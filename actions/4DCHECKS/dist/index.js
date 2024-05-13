@@ -33240,11 +33240,7 @@ class TimerService {
 
   // Function to pause the process for a given number of milliseconds
   pause(milliseconds) {
-    return new Promise((resolve) => {
-      this.timer = setTimeout(() => {
-        resolve();
-      }, milliseconds);
-    });
+    return new Promise((resolve) => setTimeout(resolve, milliseconds));
   }
 
   // Function to cancel the current timer
@@ -33566,8 +33562,9 @@ async function run() {
   console.log({ head_ref, base_ref, SourceSystem, TargetSystem, schemaName });
   const timer = new TimerService();
 
-  timer.pause(10000).then(() => {
-    console.log("Waiting to Sync Changes...");
+  console.log("Waiting to Sync Changes...");
+  await timer.pause(20000).then(() => {
+    console.log("sync complete!");
   });
 
   timer.clear();

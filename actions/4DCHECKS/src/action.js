@@ -18,8 +18,9 @@ async function run() {
   console.log({ head_ref, base_ref, SourceSystem, TargetSystem, schemaName });
   const timer = new TimerService();
 
-  timer.pause(10000).then(() => {
-    console.log("Waiting to Sync Changes...");
+  console.log("Waiting to Sync Changes...");
+  await timer.pause(20000).then(() => {
+    console.log("sync complete!");
   });
 
   timer.clear();
