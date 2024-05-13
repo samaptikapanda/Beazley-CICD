@@ -1,3 +1,18 @@
+create or replace TABLE "DBO".TEST13 (
+	EXCHANGERATETYPE VARCHAR(10) NOT NULL,
+	FROMCURRENCY VARCHAR(10) NOT NULL,
+	TOCURRENCY VARCHAR(10) NOT NULL,
+	VALIDFROM DATE NOT NULL,
+	EXCHANGERATE NUMBER(17,3) NOT NULL,
+	RATIOFROM NUMBER(17,3),
+	RATIOTO NUMBER(17,3),
+	EXCHANGERATETYPE1 NUMBER(17,3) NOT NULL,
+	primary key (EXCHANGERATETYPE1),
+	foreign key (EXCHANGERATE, RATIOFROM) references "DBO"."PRIMARY_TABLE_2"("exCHANGERATETYPe1","EXCHANGERATE")
+);
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
 create or replace TABLE "DBO".TEST_123 (
 	AA1 VARCHAR(30) NOT NULL DEFAULT '10avf',
 	BB1 BINARY(10),
@@ -19,11 +34,15 @@ ALTER TABLE "SANDBOX1"."DBO"."UsersV3" DROP COLUMN ADDR5;
 -----------------------------------------------------------------------------
 ALTER TABLE "SANDBOX1"."DBO"."UsersV3" DROP COLUMN ADDR6;
 -----------------------------------------------------------------------------
+ALTER TABLE "SANDBOX1"."DBO"."UsersV3" DROP COLUMN ADDR7;
+-----------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------
 ALTER TABLE "DBO".YES ADD ADDR17 VARCHAR(20);
 -----------------------------------------------------------------------------
-ALTER TABLE "DBO".YES ADD ADDR18 VARCHAR(20)
+ALTER TABLE "DBO".YES ADD ADDR18 VARCHAR(20);
+-----------------------------------------------------------------------------
+ALTER TABLE "DBO".YES ADD ADDR19 VARCHAR(20)
 ;
 -----------------------------------------------------------------------------
 
