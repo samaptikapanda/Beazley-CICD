@@ -1,87 +1,68 @@
-ALTER TABLE "SANDBOX1"."DBO"."Users" DROP COLUMN NAME;
------------------------------------------------------------------------------
-ALTER TABLE "SANDBOX1"."DBO"."Users" DROP COLUMN "Age";
------------------------------------------------------------------------------
-
------------------------------------------------------------------------------
-ALTER TABLE "DBO"."UsersV3" ADD "Age" NUMBER(38,0);
------------------------------------------------------------------------------
-ALTER TABLE "DBO"."UsersV3" ADD "Age2" NUMBER(38,0);
------------------------------------------------------------------------------
-ALTER TABLE "DBO"."UsersV3" ADD ADDR3 VARCHAR(20);
------------------------------------------------------------------------------
-ALTER TABLE "DBO"."UsersV3" ADD ADDR4 VARCHAR(20);
------------------------------------------------------------------------------
-ALTER TABLE "DBO"."UsersV3" ADD ADDR5 VARCHAR(20);
------------------------------------------------------------------------------
-ALTER TABLE "DBO"."UsersV3" ADD ADDR6 VARCHAR(20);
------------------------------------------------------------------------------
-ALTER TABLE "DBO"."UsersV3" ADD ADDR7 VARCHAR(20)
-;
------------------------------------------------------------------------------
-
------------------------------------------------------------------------------
-create or replace TABLE "DBO".YES (
-	PROD_ID NUMBER(38,0),
-	PROD_NAME VARCHAR(100),
-	CATAGORY VARCHAR(100),
-	RATING NUMBER(38,0),
-	INDICATER VARCHAR(10),
-	ADDR9 DATE,
-	ADDR10 VARCHAR(20),
-	ADDR11 VARCHAR(20),
-	ADDR12 VARCHAR(20),
-	ADDR13 VARCHAR(20),
-	ADDR14 VARCHAR(20),
-	ADDR15 VARCHAR(20),
-	ADDR16 VARCHAR(20)
+create or replace TABLE "DBO".TEST13 (
+	EXCHANGERATETYPE VARCHAR(10) NOT NULL,
+	FROMCURRENCY VARCHAR(10) NOT NULL,
+	TOCURRENCY VARCHAR(10) NOT NULL,
+	VALIDFROM DATE NOT NULL,
+	EXCHANGERATE NUMBER(17,3) NOT NULL,
+	RATIOFROM NUMBER(17,3),
+	RATIOTO NUMBER(17,3),
+	EXCHANGERATETYPE1 NUMBER(17,3) NOT NULL,
+	primary key (EXCHANGERATETYPE1),
+	foreign key (EXCHANGERATE, RATIOFROM) references "DBO"."PRIMARY_TABLE_2"("exCHANGERATETYPe1","EXCHANGERATE")
 );
 -----------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------
-create or replace TABLE "DBO"."alert" (
-	FIRSTNAME VARCHAR(250),
-	MIDDLENAME VARCHAR(250),
-	LASTNAME VARCHAR(250),
-	CUSTOMERNAME VARCHAR(250),
-	ADDRESS VARCHAR(250),
-	CITY VARCHAR(250),
-	PHONE NUMBER(38,0),
-	EMAIL VARCHAR(250),
-	SSN VARCHAR(250),
-	GENDER VARCHAR(250),
-	AGE NUMBER(38,0),
-	CUSTOMERID VARCHAR(250)
+create or replace TABLE "DBO".TEST_123 (
+	AA1 VARCHAR(30) NOT NULL DEFAULT '10avf',
+	BB1 BINARY(10),
+	CC22 NUMBER(38,0) NOT NULL autoincrement start 1 increment 1 order,
+	DD1 DATE,
+	primary key (AA1, CC22)
 );
 -----------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------
-ALTER TABLE "TRANSIENT".TEST_TABLE ADD NAME VARCHAR(50);
+ALTER TABLE "SANDBOX1"."DBO"."Users" DROP COLUMN ID;
 -----------------------------------------------------------------------------
-ALTER TABLE "TRANSIENT".TEST_TABLE ADD CITY VARCHAR(50);
+
 -----------------------------------------------------------------------------
-ALTER TABLE "TRANSIENT".TEST_TABLE ADD PHONE_NUMBER VARCHAR(20);
------------------------------------------------------------------------------
-ALTER TABLE "TRANSIENT".TEST_TABLE ADD OCCUPATION VARCHAR(50);
------------------------------------------------------------------------------
-ALTER TABLE "TRANSIENT".TEST_TABLE ADD NAME1 VARCHAR(50);
------------------------------------------------------------------------------
-ALTER TABLE "TRANSIENT".TEST_TABLE ADD NAME2 VARCHAR(50)
+ALTER TABLE "DBO"."UsersV3" ADD ADDR8 VARCHAR(20)
 ;
 -----------------------------------------------------------------------------
-ALTER TABLE "SANDBOX1"."TRANSIENT"."Test_Table" DROP COLUMN EMP_ID;
+ALTER TABLE "SANDBOX1"."DBO"."UsersV3" DROP COLUMN ADDR5;
 -----------------------------------------------------------------------------
-ALTER TABLE "SANDBOX1"."TRANSIENT"."Test_Table" DROP COLUMN EMP_NAME;
+ALTER TABLE "SANDBOX1"."DBO"."UsersV3" DROP COLUMN ADDR6;
 -----------------------------------------------------------------------------
-ALTER TABLE "SANDBOX1"."TRANSIENT"."Test_Table" DROP COLUMN CURRENT_ADDRESS;
+ALTER TABLE "SANDBOX1"."DBO"."UsersV3" DROP COLUMN ADDR7;
 -----------------------------------------------------------------------------
-ALTER TABLE "SANDBOX1"."TRANSIENT"."Test_Table" DROP COLUMN BUSINESS;
+
 -----------------------------------------------------------------------------
-ALTER TABLE "SANDBOX1"."TRANSIENT"."Test_Table" DROP COLUMN PHONE;
+ALTER TABLE "DBO".YES ADD ADDR17 VARCHAR(20);
 -----------------------------------------------------------------------------
-ALTER TABLE "SANDBOX1"."TRANSIENT"."Test_Table" DROP COLUMN JOINING_DATE;
+ALTER TABLE "DBO".YES ADD ADDR18 VARCHAR(20);
 -----------------------------------------------------------------------------
-ALTER TABLE "SANDBOX1"."TRANSIENT"."Test_Table" DROP COLUMN SALARY;
+ALTER TABLE "DBO".YES ADD ADDR19 VARCHAR(20)
+;
 -----------------------------------------------------------------------------
-ALTER TABLE "TRANSIENT"."Test_Table" DROP primary key;
+
+-----------------------------------------------------------------------------
+create or replace TABLE "DBO"."emp_trans1" (
+	NAME VARCHAR(50) NOT NULL,
+	"Emp_ID" NUMBER(38,0) NOT NULL,
+	primary key ("Emp_ID")
+);
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+create or replace TABLE "DBO"."flight1" (
+	FLIGHTID NUMBER(38,0),
+	ID NUMBER(38,0),
+	FLIGHTNUMBER VARCHAR(80),
+	DEPARTUREDATE DATE,
+	DEPARTURECITY VARCHAR(50),
+	DESTINATIONCITY VARCHAR(50),
+	SEATNO NUMBER(38,0),
+	constraint PK primary key (ID, FLIGHTID)
+);
 -----------------------------------------------------------------------------

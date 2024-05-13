@@ -1,7 +1,6 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
 const fetch = require("node-fetch");
-const TimerService = require("../../services/timer.service");
 
 async function run() {
   let USER_NAME = core.getInput("USER_NAME");
@@ -16,14 +15,15 @@ async function run() {
   let base_ref = core.getInput("BASE_REF");
 
   console.log({ head_ref, base_ref, SourceSystem, TargetSystem, schemaName });
-  const timer = new TimerService();
+  let sleep = function (ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  };
 
   console.log("Waiting to Sync Changes...");
-  await timer.pause(20000).then(() => {
-    console.log("sync complete!");
-  });
-
-  timer.clear();
+  console.log("-----------------------------------------------------------------");
+  await sleep(60000);
+  console.log("Sync Completed!");
+  console.log("-----------------------------------------------------------------");
 
   let body_0 = {
     username: USER_NAME,
@@ -44,6 +44,10 @@ async function run() {
     BaseBranch: "master",
     ScriptGenerationRules: ["Include DROP statement"],
   };
+
+  console.log("Comparing...");
+  console.log("-----------------------------------------------------------------");
+
   const TokenFetchResponse = await fetch(
     `https://app.4dalert.com/api/v1/user-auth/login-user`,
     {
@@ -65,6 +69,7 @@ async function run() {
   //   }
   // );
 
+  console.log("Please Wait...");
   const deployScriptResp = await fetch(
     `https://app.4dalert.com/api/v1/4d/ci/cd/generate-deployment-scripts`,
     {
@@ -99,6 +104,10 @@ async function run() {
     issue_number: pull_request.number,
     body: `Thank you for submitting a pull request! We will try to review this as soon as we can.`,
   });
+
+  console.log("-----------------------------------------------------------------");
+  console.log("Action Completed");
+  console.log("-----------------------------------------------------------------");
 }
 
 run();
