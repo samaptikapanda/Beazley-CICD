@@ -1,0 +1,5 @@
+create or replace TABLE "DBO".EXAM (
+	ID NUMBER(38,0) NOT NULL,
+	COLUMN1 VARCHAR(50),
+	COLUMN2 NUMBER(38,0)
+);
