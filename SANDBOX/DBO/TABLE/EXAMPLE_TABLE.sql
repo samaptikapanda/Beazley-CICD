@@ -1,0 +1,8 @@
+create or replace TABLE "DBO".EXAMPLE_TABLE (
+	ID NUMBER(38,0) NOT NULL,
+	UNIQUE_COLUMN VARCHAR(100),
+	OTHER_COLUMN VARCHAR(255),
+	"Test_Column" NUMBER(38,0),
+	unique (UNIQUE_COLUMN),
+	primary key (ID)
+);
