@@ -1,0 +1,4 @@
+create or replace TABLE "DBO".PRATICE_SCH1 (
+	ID NUMBER(38,0),
+	NAME VARCHAR(10)
+);
