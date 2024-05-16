@@ -1,5 +1,0 @@
-create or replace TABLE "DBO".DUPLICATE_RECORDS (
-	ID NUMBER(38,0),
-	SALARY NUMBER(10,2),
-	AGE NUMBER(38,0)
-);
