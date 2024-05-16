@@ -92,8 +92,8 @@ async function run() {
   // const ResonseData = await response.text();
   // console.log("ResonseData : ", ResonseData);
 
-  const GITHUB_TOKEN = core.getInput("GITHUB_TOKEN");
-  const octokit = github.getOctokit(GITHUB_TOKEN);
+  const TOKEN = core.getInput("TOKEN");
+  const octokit = github.getOctokit(TOKEN);
   const { context = {} } = github;
   const { pull_request } = context.payload;
 
