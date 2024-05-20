@@ -1,1 +1,0 @@
-create or replace sequence "TRANSIENT".SEQUENCE_2 start with 4 increment by 5 noorder;
