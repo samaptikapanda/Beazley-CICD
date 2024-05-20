@@ -1,14 +1,8 @@
-create or replace materialized view "TRANSIENT"."mv_product_sales"(
-	"product_id",
-	TOTAL_SALES,
-	NUMBER_OF_SALES
-) as
-SELECT
-    "product_id",
-    SUM(amount) AS total_sales,
-    COUNT(*) AS number_of_sales
-FROM
-    "sales"
-GROUP BY
-    "product_id";
+CREATE OR REPLACE PROCEDURE "CDR"."ADD_PROCEDURE"("PARAM1" NUMBER(38,0), "PARAM2" NUMBER(38,0), "PARAM3" NUMBER(38,0))
+RETURNS FLOAT
+LANGUAGE SQL
+EXECUTE AS OWNER
+AS '
+  SELECT param1::FLOAT * param2::FLOAT ;
+  ';
 -----------------------------------------------------------------------------
