@@ -1,6 +1,2 @@
-DROP PROCEDURE IF EXISTS "CDR"."ADD_PROCEDURE"(NUMBER(38,0),NUMBER(38,0),NUMBER(38,0));
------------------------------------------------------------------------------
-
------------------------------------------------------------------------------
-DROP MATERIALIZED VIEW IF EXISTS "TRANSIENT"."mv_product_sales";
+DROP MATERIALIZED VIEW IF EXISTS "DBO"."MATERIALIZED_FLIGHT";
 -----------------------------------------------------------------------------
