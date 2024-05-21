@@ -1,0 +1,24 @@
+create or replace view "DBO".TEST_VIEW(
+	EMP_ID,
+	ID,
+	EMP_NAME,
+	AGE,
+	CURRENT_ADDRESS,
+	EMAIL,
+	BUSINESS,
+	PHONE,
+	JOINING_DATE,
+	SALARY
+) as
+SELECT 
+    EMP_ID,
+    ID,
+    EMP_NAME,
+    AGE,
+    CURRENT_ADDRESS,
+    EMAIL,
+    BUSINESS,
+    PHONE,
+    JOINING_DATE,
+    SALARY
+FROM  "DBO"."Test_Table";
