@@ -40,7 +40,7 @@ async function run() {
     SourceSystemName: "SGSSANDBOX",
     TargetSystemName: "SANDBOX1",
     SystemType: "SNOWFLAKE",
-    SchemaName: ["DEV", "CDR", "DBO", "STG", "TRANSIENT"],
+    SchemaName: ["DEV", "CDR", "DBO", "STG", "TRANSIENT","FDA"],
     Path: "DATABASE",
     HeadBranch: "develop",
     BaseBranch: "master",
