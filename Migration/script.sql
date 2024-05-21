@@ -1,3 +1,7 @@
+create or replace sequence "DBO".EMPLOYEEIDSEQ_RANJA1 start with 1 increment by 1 noorder;
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
 create or replace TABLE "DBO".ABCD (
 	EMPLOYEE_ID NUMBER(38,0),
 	FIRST_NAME VARCHAR(50),
@@ -40,6 +44,53 @@ create or replace TABLE "DBO".AUTOINC (
 -----------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------
+create or replace TABLE "DBO".CALENDARDATE (
+	CALENDARDATE DATE,
+	CALENDARWEEK NUMBER(38,0),
+	CALENDARMONTH NUMBER(38,0),
+	CALENDARYEARMONTH VARCHAR(7),
+	CALENDARQTR NUMBER(38,0),
+	CALENDARYEARQTR VARCHAR(7),
+	CALENDARYEAR NUMBER(38,0),
+	CALENDARYEARMONTHEXPANDED VARCHAR(20),
+	CALENDARYEARMONTHEXPANDED2 VARCHAR(8),
+	CALENDARYEARMONTHEXPANDED3 VARCHAR(8),
+	CALENDARYEARMONTH1 VARCHAR(6),
+	CALENDARYEARDOTQTR VARCHAR(6),
+	INDASOFTODAYR12 VARCHAR(1),
+	INDASOFTODAYR06 VARCHAR(1),
+	INDASOFTODAYR03 VARCHAR(1),
+	INDASOFTODAYYTD VARCHAR(1),
+	INDASOFTODAYCURRENTY VARCHAR(1),
+	INDASOFTODAYPRIORY VARCHAR(1),
+	INDASOFTODAYPRIORPRIORY VARCHAR(1),
+	INDASOFTODAYNEXTY VARCHAR(1),
+	INDASOFTODAYNEXTNEXTY VARCHAR(1),
+	INDASOFTODAYFUTURE VARCHAR(1),
+	INDASOFTODAYPAST VARCHAR(1),
+	INDASOFTODAYTODAY VARCHAR(1),
+	INDASOFTODAYPYTD VARCHAR(1),
+	INDASOFTODAYPYR12 VARCHAR(1),
+	INDASOFTODAYPYR06 VARCHAR(1),
+	INDASOFTODAYPYR03 VARCHAR(1),
+	INDASOFTODAYCURRQTR VARCHAR(1),
+	INDASOFTODAYPRIORQTR VARCHAR(1),
+	INDASOFTODAYPRIORPRIORQTR VARCHAR(1),
+	INDASOFTODAYPRIORYRPRIORQTR VARCHAR(1),
+	INDASOFTODAYPPYTD VARCHAR(3),
+	INDASOFTODAYPPYR12 VARCHAR(3),
+	INDASOFTODAYPPYR03 VARCHAR(3),
+	INDASOFTODAYCURMONTH VARCHAR(3),
+	INDASOFTODAYPRMONTH VARCHAR(3),
+	INLASTR12MONTHINDICATOR VARCHAR(20),
+	INDASOFTODAYF12 VARCHAR(10),
+	INDSUMMARIZESTARTDATE VARCHAR(3),
+	INDSUMMARIZEENDDATE VARCHAR(3),
+	INDASOFTODAYCURMONTHFUTURE VARCHAR(3)
+);
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
 create or replace view "DBO".CAL_DATE_VIEW(
 	EMP_ID,
 	EMP_NAME,
@@ -54,6 +105,26 @@ SELECT
 FROM
     "DBO"."Cal_Date_Range"
     where ADDRESS IN ('Ahmedabad','Nainital','Kolkata');
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+create or replace view "DBO".CUSTOMER_VIEW(
+	CUSTOMERID,
+	FIRSTNAME,
+	LASTNAME,
+	AGE
+) as
+SELECT
+    CUSTOMERID,
+    FIRSTNAME,
+	LASTNAME,
+	AGE
+FROM
+    "DBO"."CUSTOMER_DETAILS_DQ"
+WHERE AGE > 25 AND
+      AGE < 30 AND
+	  CITY IN ('Acajutla','Apopa','La Union') AND
+	  LASTNAME IN('Bernard','Tate','Alexander','Richmond');
 -----------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------
@@ -80,6 +151,15 @@ create or replace view "DBO".VS(
 ) as
 SELECT ID,NAME
 FROM "DBO"."PERF";
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION "DBO"."FUNCTIONPart3"("ORDER_AMOUNT" NUMBER(10,2), "TAX_RATE" NUMBER(5,2))
+RETURNS NUMBER(10,2)
+LANGUAGE SQL
+AS '
+   order_amount * (1 + tax_rate)
+';
 -----------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------
@@ -132,6 +212,27 @@ end
 
 -----------------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE "DBO"."INSERTEMPLOYEE_RANJAN"("P_FIRSTNAME" VARCHAR(50), "P_LASTNAME" VARCHAR(50), "P_BIRTHDATE" DATE, "P_HIREDATE" DATE, "P_POSITION" VARCHAR(100), "P_SALARY" NUMBER(10,2))
+RETURNS VARCHAR(16777216)
+LANGUAGE SQL
+EXECUTE AS OWNER
+AS '
+DECLARE
+    v_EmployeeID INT;
+BEGIN
+    -- Get the next value from the sequence
+    v_EmployeeID := NEXTVAL(''EmployeeIDSeq'');
+    
+    -- Insert the new employee
+    INSERT INTO Employees (EmployeeID, FirstName, LastName, BirthDate, HireDate, Position, Salary)
+    VALUES (v_EmployeeID, p_FirstName, p_LastName, p_BirthDate, p_HireDate, p_Position, p_Salary);
+    
+    RETURN ''Employee inserted successfully with EmployeeID: '' || v_EmployeeID;
+END;
+';
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE "DBO"."INSERTEMPLOYEE_RANJAN_1"("P_FIRSTNAME" VARCHAR(50), "P_LASTNAME" VARCHAR(50), "P_BIRTHDATE" DATE, "P_HIREDATE" DATE, "P_POSITION" VARCHAR(100), "P_SALARY" NUMBER(10,2))
 RETURNS VARCHAR(16777216)
 LANGUAGE SQL
 EXECUTE AS OWNER
