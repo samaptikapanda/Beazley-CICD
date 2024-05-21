@@ -1,0 +1,1 @@
+create or replace stream "DBO".STUDENT_STREAM on table STUDENT_TRANSIENT;
