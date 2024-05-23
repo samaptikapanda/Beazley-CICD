@@ -1,1 +1,0 @@
-create or replace sequence "DBO".EMPLOYEEIDSEQ_RANJAN_7 start with 1 increment by 1 noorder;
