@@ -10,8 +10,8 @@ BEGIN
     v_EmployeeID := NEXTVAL(''EmployeeIDSeq'');
     
     -- Insert the new employee
-    INSERT INTO Employees (EmployeeID, FirstName, LastName, BirthDate, HireDate, Position, Salary)
-    VALUES (v_EmployeeID, p_FirstName, p_LastName, p_BirthDate, p_HireDate, p_Position, p_Salary);
+    INSERT INTO Employees (EmployeeID, FirstName, LastName, BirthDate, HireDate)
+    VALUES (v_EmployeeID, p_FirstName, p_LastName, p_BirthDate, p_HireDate);
     
     RETURN ''Employee inserted successfully with EmployeeID: '' || v_EmployeeID;
 END;
