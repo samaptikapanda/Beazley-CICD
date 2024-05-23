@@ -117,7 +117,7 @@ SELECT		 "HEXKeyEmployees",
 FROM		FDA."RUNU_DimEmployee" a
 			INNER JOIN (
 				SELECT		"LoginId",
-							MAX("WorkDate") "WorkDateLatest"
+							MIN("WorkDate") "WorkDateLatest"
 				FROM		FDA."RUNU_DimEmployee" 
 				GROUP BY	"LoginId"
 				)		b	ON	a."LoginId" = b."LoginId"
