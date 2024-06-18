@@ -37,8 +37,8 @@ async function run() {
     RepoType: "GITHUB",
     RepoName: "GITHUB-Beazley-CICD",
     ConnectionName: "Beazley-CICDTest",
-    SourceSystemName: "SGSSANDBOX",
-    TargetSystemName: "SANDBOX1",
+    SourceSystemName: "SNOWSOURCE",
+    TargetSystemName: "SNOWTARGET",
     SystemType: "SNOWFLAKE",
     SchemaName: ["DEV", "CDR", "DBO", "STG", "TRANSIENT","FDA"],
     Path: "DATABASE",
@@ -65,7 +65,7 @@ async function run() {
 
   console.log("Please Wait...");
   const deployScriptResp = await fetch(
-    `https://app.4dalert.com/api/v1/4d/ci/cd/generate-deployment-scripts`,
+    `http://40.77.51.51/api/v1/4d/ci/cd/generate-deployment-scripts`,
     {
       method: "post",
       body: JSON.stringify(body_1),
