@@ -33772,8 +33772,8 @@ async function run() {
       RepoType: "GITHUB",
       RepoName: "GITHUB-Beazley-CICD",
       ConnectionName: "Beazley-CICDTest",
-      SourceSystemName: "SGSSANDBOX",
-      TargetSystemName: "SANDBOX1",
+      SourceSystemName: "SNOWSOURCE",
+      TargetSystemName: "SNOWTARGET",
       SystemType: "SNOWFLAKE",
       SchemaName: ["DEV","CDR","DBO","STG","TRANSIENT","FDA"],
       HeadBranch: "",
@@ -33782,7 +33782,7 @@ async function run() {
     };
 
     const resp = await fetch(
-      `https://app.4dalert.com/api/v1/4d/ci/cd/execute-system-ddl-query`,
+      `http://40.77.51.51/api/v1/4d/ci/cd/execute-system-ddl-query`,
       {
         method: "post",
         body: JSON.stringify(body_1),
