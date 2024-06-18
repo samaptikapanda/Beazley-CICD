@@ -1,3 +1,3 @@
-create or replace sequence DBO.EMPLOYEEIDSEQ_MOHAN start with 1 increment by 1 noorder;
+DROP SEQUENCE IF EXISTS DBO.EMPLOYEEIDSEQ_MOHAN;
 -----------------------------------------------------------------------------
-create or replace sequence FDA.DEV_TEST start with 2 increment by 2 noorder;
+DROP SEQUENCE IF EXISTS FDA.DEV_TEST;
